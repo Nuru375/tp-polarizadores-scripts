@@ -1,0 +1,7 @@
+# --- Control de Hardware ---
+pyserial>=3.5      # Para la comunicación RS-232 con Arduino y el multímetro
+
+# --- Análisis de Datos y Formalismo de Jones ---
+numpy>=1.21.0      # Para cálculos matriciales y vectorización de ángulos
+pandas>=1.3.0      # Para lectura, filtrado y segmentación de los archivos CSV
+matplotlib>=3.4.0  # Para la generación de gráficos polares y curvas teóricas
