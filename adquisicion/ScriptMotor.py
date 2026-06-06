@@ -206,25 +206,9 @@ def ejecutar_experimento():
         
     finally:
         print(f"\n--- Datos guardados en {ARCHIVO_DESTINO} ---")
-        print("\nDesea cerrar el puerto serie? Escriba 0 o 1.")
-        print("0: NO")
-        print("1: SI")
-        
-        try:
-            us_input = input(">> ")
-            choice = int(us_input)
-        
-        except ValueError:
-            print("ERROR: Se ingresó una respuesta no válida. Se cerrará el puerto preventivamente.")
-            choice = 1
-        
-        finally:
-            if choice and arduino.is_open:
-                arduino.close()
-                print("Puerto cerrado.")
-            else:
-                print("El puerto serie no está abierto.")
-
+        if arduino.is_open:
+            arduino.close()
+            print("Puerto cerrado.")
 
 if __name__ == "__main__":
     ejecutar_experimento()
